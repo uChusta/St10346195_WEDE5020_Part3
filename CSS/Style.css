@@ -11,7 +11,9 @@ body,html {
   margin: 19px;
   padding: 20px;
   font: bold 14px/1.4 "Montserrat", sans-serif;
-  background: #000;
+  background-image: url("../images/gaming1.png");
+  background-repeat: repeat;
+  background-color: #000;
   color: #fff;
 }
 
@@ -35,38 +37,25 @@ body,html {
   color: white;
 }
 
-/*---------------Navigtion-------*/
-.topNav ul{
+/*---------------Navigation-------*/
+.topNav ul {
   text-align: center;
-}
-.navLinks ul { 
-  margin: 150px auto 0; 
-  padding: 0; 
-  list-style: none; 
-  display: table;
-  width: 600px;
-  text-align: center;
-}
-.navLinks li { 
-  display: table-cell;
-  padding: 15px 0;
 }
 
-/*-----Navigation and footer styling----*/ 
-.navLinks a{
+/*-----Navigation and footer styling----*/
+.navLinks a {
   color: #1E90FF;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.15em;
-  
   display: inline-block;
   padding: 15px 20px;
   position: relative;
 }
 
-/*-----psuedoclass for navigastion and footer---*/
-.navLinks a:after,.social a:after {    
-  background: none repeat scroll 0 0 transparent;
+/*-----Pseudoclass for navigation and footer---*/
+.navLinks a:after, .social a:after {
+  background: transparent;
   bottom: 0;
   content: "";
   display: block;
@@ -78,61 +67,59 @@ body,html {
   width: 0;
 }
 
-/*-----psuedoclass for navigastion and footer---*/
-.navLinks a:hover:after, .social a:hover:after { 
-  width: 100%; 
-  left: 0; 
+/*-----Pseudoclass for navigation and footer---*/
+.navLinks a:hover:after, .social a:hover:after {
+  width: 100%;
+  left: 0;
 }
 
 /*------footer--------*/
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: -10px;
-    width: 100%;
-    color: #fff;
-    text-align: center;
-    background-color: #000;
-    padding: 5px;
-    font-size: small;
+  position: fixed;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  padding: 5px;
+  font-size: small;
 }
 
-/*--------footer syling---*/
-.social ul{
-  padding: 0; 
+/*--------footer styling---*/
+.social ul {
+  padding: 0;
   list-style: none;
 }
-.social a{
+
+.social a {
   color: #1E90FF;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.15em;
-  
   display: inline-block;
   position: relative;
 }
 /*-------responsiveness for navigation bar----*/
 @media screen and (max-height: 300px) {
-	.navLinks ul {
-		margin-top: 40px;
-	}
-
+  .topNav {
+    margin-top: 40px;
+  }
 }
 
-
-
 /*styling for headings*/
-h1{
+h1 {
   text-align: center;
   font-size: 50px;
 }
-h2{
+
+h2 {
   text-align: center;
   font-size: 30px;
 }
 
 /*styling for paragraphs*/
-p { 
+p {
   text-align: center;
   font-size: 18px;
 }
@@ -149,13 +136,11 @@ input[type=text], select, textarea, input[type=tel] {
   resize: vertical;
 }
 
-/*-------styling for all forms-------*/v
-.form{
+.form {
   border-radius: 5px;
   padding: 20px;
 }
 
-/*-------styling for all forms-------*/
 input[type=submit], input[type=reset] {
   background-color: #1E90FF;
   color: white;
@@ -166,12 +151,10 @@ input[type=submit], input[type=reset] {
   width: 15%;
 }
 
-/*-------styling for all forms-------*/
 input[type=submit]:hover {
   background-color: #45a049;
 }
 
-/*-------styling for all forms-------*/
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
@@ -206,11 +189,10 @@ label {
 }
 
 /*-----------styling for all buttons in the entire website-----*/
-.BContainer{
+.BContainer {
   text-align: center;
 }
 
-/*-----------styling for all buttons in the entire website-----*/
 .button {
   background-color: #1E90FF;
   border: none;
@@ -224,13 +206,10 @@ label {
   width: 15%;
 }
 
-/*-----------styling for all buttons in the entire website-----*/
-.button:hover{
+.button:hover {
   background-color: #45a049;
 }
-
-
-.services li{
+.services li {
   text-align: center;
   list-style: none;
   font-size: 18px;
@@ -238,11 +217,11 @@ label {
 
 /*---------styling for products items on the products page-----*/
 .card {
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-max-width: 300px;
-margin: auto;
-text-align: center;
-font-family: arial;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
 }
 
 /* Grid container for products */
@@ -254,29 +233,25 @@ font-family: arial;
   margin-bottom: 40px;
 }
 
-/*---------styling for products items on the products page-----*/
 .price {
-color: grey;
-font-size: 22px;
+  color: grey;
+  font-size: 22px;
 }
 
-
-/*---------styling for products items on the products page-----*/
 .card button {
-border: none;
-outline: 0;
-padding: 12px;
-color: white;
-background-color: #000;
-text-align: center;
-cursor: pointer;
-width: 100%;
-font-size: 18px;
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
 }
 
-/*---------styling for products items on the products page-----*/
 .card button:hover {
-opacity: 0.7;
+  opacity: 0.7;
 }
 
 /* Sidebar styling */
@@ -288,7 +263,7 @@ opacity: 0.7;
   background-color: #333;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar h2 {
@@ -317,7 +292,7 @@ opacity: 0.7;
 }
 
 .sidebar a:after {
-  background: none repeat scroll 0 0 transparent;
+  background: transparent;
   bottom: 0;
   content: "";
   display: block;
@@ -339,25 +314,19 @@ opacity: 0.7;
   color: #1E90FF;
 }
 
-/* Sidebar toggle button (hidden on large screens)
-   ADDED: This button appears on tablet/mobile sizes and toggles the visibility
-   of the sidebar menu. It is intentionally simple (☰) so it degrades gracefully.
-*/
+/* Sidebar toggle button (hidden on large screens) */
 .sidebar-toggle {
   display: none;
   background: transparent;
   color: #1E90FF;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 6px 10px;
   border-radius: 6px;
   font-size: 18px;
   cursor: pointer;
 }
 
-/* Default: ensure menu visible
-   NOTE: `.sidebar-menu` will also receive the `collapsible` class so CSS/JS
-   can hide/show it on narrow screens. On large screens it remains visible.
-*/
+/* Default: ensure menu visible */
 .sidebar .sidebar-menu {
   display: block;
 }
@@ -372,7 +341,7 @@ opacity: 0.7;
 }
 
 .sidebar.open .sidebar-menu.collapsible {
-  max-height: 800px; /* generous max-height to allow expansion */
+  max-height: 800px;
   transition: max-height 0.35s ease-in, padding 0.2s ease-in;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -392,16 +361,15 @@ opacity: 0.7;
     margin-left: 0;
   }
 
-  /* show toggle on tablets */
   .sidebar-toggle {
     display: inline-block;
     margin-top: 6px;
   }
 
-  /* make sidebar-menu collapsible on smaller screens */
   .sidebar .sidebar-menu {
     padding-top: 10px;
   }
+
   .sidebar .sidebar-menu.collapsible {
     max-height: 0;
     overflow: hidden;
@@ -432,7 +400,6 @@ opacity: 0.7;
     margin-left: 0;
   }
 
-  /* show toggle on small screens */
   .sidebar-toggle {
     display: inline-block;
     margin-top: 6px;
