@@ -2,9 +2,7 @@ PART 2- READ ME
 
 Overview:
 
-This project builds upon the HTML code from ST1034619_WEDE5020_Part1 and provides CSS styling for the website. With the use of CSS color, responsiveness and overall style to was added to the wbesite. This makes the website more appealing, easier to read and adds some personality as well. 
-
-
+This project builds upon the HTML and CSS code from ST1034619_WEDE5020_Part3 and provides Javascript interactivity along with overall improvements to the website. Using CSS I was able to add a plethora of functionalities and and inpmroments thhat make the website more responsive and interactive with the user.  
 
 References:
 
