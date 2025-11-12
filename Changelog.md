@@ -7,7 +7,28 @@
 -READ ME is Created and updated. (commit: Update README)
 
 19 Sept 2025:
-Proposal is updated with feedback from part 1.
+-HTML project files from Part 1 are added to repository.
+-CSS folder added and external CSS Style sheet is created and linked to to all pages.
+
+23 Sept 2025: (Commit: new nav)
+
+-Navigation bar layout is updatedslong with website layout.
+-Footer is created with working links and styled to look like navigatio bar.
+-Styling for body and font-type for website is added.
+-Product cards styling s added.
+-buttons styled with colour and responsiveness.
+-Responsiveness is added and tested.
+
+-forms are updated and styled
+-added font size for paragraphs and headings is updated
+
+25 Sept 2025:
+-Favicon is added. (commit: favicon and hero image)
+-Hero image is added and styled. (commit: favicon and hero image)
+
+-READ ME is update with screenshots. (commit: Update README.md)
+-Proposal is updated with feedback from part 1.
+
 
 12 Nov 2025:
 
@@ -39,25 +60,4 @@ Notes:
 - Breakpoint (1024px) is used as the desktop/tablet cutoff; can be adjusted if you prefer different behavior.
 
 ```
-
-
-23 Sept 2025: (Commit: new nav)
-
--Navigation bar layout is updatedslong with website layout.
--Footer is created with working links and styled to look like navigatio bar.
--Styling for body and font-type for website is added.
--Product cards styling s added.
--buttons styled with colour and responsiveness.
--Responsiveness is added and tested.
-
--forms are updated and styled
--added font size for paragraphs and headings is updated
-
-25 Sept 2025:
--Favicon is added. (commit: favicon and hero image)
--Hero image is added and styled. (commit: favicon and hero image)
-
--READ ME is update with screenshots. (commit: Update README.md)
--Proposal is updated with feedback from part 1.
-
 
