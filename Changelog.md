@@ -29,6 +29,12 @@
 -READ ME is update with screenshots. (commit: Update README.md)
 -Proposal is updated with feedback from part 1.
 
+27 Oct 2025:
+
+-Intitated St10346195_WEDE5020_Part3 repository and uploaded files from Part 2.
+-Added Javscript folder and file  then linked to all the pages.
+-implemented an interactive map on the Contact.html page along with adding commnets.
+-Created `validateForm` functions for Repair and Contact form (in `JS/Script.js`).
 
 12 Nov 2025:
 
@@ -46,18 +52,11 @@
 	- Added a "Back to Top" sidebar link and `id="top"` anchor on the page (`Products.html`).
 	- Implemented a hamburger toggle for tablets/phones: button, ARIA attributes, collapsible menu CSS and toggle logic in `JS/Script.js` and `CSS/Style.css`.
 	- Sidebar stays open by default on desktop (width >1024px) and collapses on smaller screens; closes when clicking outside or after selecting a link.
-
-- Miscellaneous:
-	- Added comments describing all the edits in the three modified files (`Products.html`, `CSS/Style.css`, `JS/Script.js`).
-
-Files changed today:
+	
+Files updated:
 - `JS/Script.js` — validation functions, sidebar active-link logic, toggle behavior, comments
 - `CSS/Style.css` — products grid rules, sidebar toggle + collapsible styles, responsive media queries, comments
 - `Products.html` — wrapped product cards in `.products-grid`, added `id="top"`, added sidebar toggle and `id="sidebarMenu"`, added "Back to Top" link, and inline comments
 
-Notes:
-- UI uses simple alerts for form confirmations; these can be replaced with inline messages or AJAX calls in a follow-up.
-- Breakpoint (1024px) is used as the desktop/tablet cutoff; can be adjusted if you prefer different behavior.
-
-```
+- Added comments describing all the edits in the three modified files (`Products.html`, `CSS/Style.css`, `JS/Script.js`). 
 
