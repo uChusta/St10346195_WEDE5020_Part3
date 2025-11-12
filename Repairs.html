@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/Style.css">
+    <title>Repair</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> 
+    <!----had to put favicon in root folder as it was not appearing when i ran the code-->
+</head>
+
+<body>
+        <!--Navigtion-->
+        <div class="topNav"> 
+            <nav>
+                <ul class="navLinks">
+                    <a href="Index.html">Home</a>
+                    <a href="About.html">About</a>
+                    <a href="Contact.html">Contact</a>
+                    <a href="Services.html">Services</a>
+                    <a href="Products.html">Products</a>
+                    <a href="Repairs.html">PC Solutions</a>
+                </ul>
+            </nav>
+        </div>
+
+                            <!---services form for customers who who need our skills--->   
+
+    <main>
+
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1>Computer Services</h1>
+            </div>
+        </div>
+        <br>
+
+
+        <p> At CloudTech Inc., We offer a comprehensive range of computer repair services to meet all your needs. 
+            Our team of experienced technicians is dedicated to providing high-quality service and ensuring your devices are running smoothly.
+        </p>
+        <br>
+
+        <h2>Let Us Help</h2>
+        <p>If you're experiencing issues with your computer or need assistance with any of our repair services, please don't hesitate to contact us. 
+            You can reach us via phone, email, or by visiting our store. We're here to help!</p>
+            <br>
+
+        <div class="form" id="repairForm">
+
+         <form action="Submit Repair Request" name="RepairForm" method="post" action ="/action_page.php">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email" required><br><br>
+            
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone"><br><br>
+            
+            <label for="service">Service Required:</label><br>
+            <select id="service" name="service" required>
+                <option value="">--Please choose an option--</option>
+                <option value="hardware_repair">Hardware Repair</option>
+                <option value="software_repair">Software Repair</option>
+                <option value="network_setup">Network Setup</option>
+                <option value="software_installation">Software Installation</option>
+                <option value="virus_removal">Virus Removal</option>
+                <option value="data_recovery">Data Recovery</option>
+                <option value="other">Other</option>
+            </select><br><br>
+
+            <label for="myimage">Upload Image (if applicable):</label><br>
+            <input type="file" id="myimage" name="myimage" accept="image/*"><br><br>
+            
+            <label for="details">Additional Details:</label><br>
+            <textarea id="details" name="details" rows="4" cols="50"></textarea><br>
+           
+                <input type="button" value="Submit" onclick="validateRepairForm()">
+                <input type="reset" value="Reset">
+                <br>
+                <br>
+        </form> 
+        </div>
+
+
+    </main>
+       <div class ="footer">
+            <ul class="social">
+                <a href="https://www.twitter.com/" target="_blank">Twitter/X</a>
+                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+                <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                <a href="https://www.linkedin.com/" target="_blank">Linkedin</a>
+                <a href="https://www.Google.com/" target="_blank">Email</a>
+            </ul>
+            <p>&copy; 2025 CloudTech</p>
+        </div>
+        <!--JavaScript link-->
+    <script src="JS/Script.js"></script>
+    </body>
+</html>
