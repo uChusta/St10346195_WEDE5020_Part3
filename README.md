@@ -12,6 +12,13 @@ Fingerprint Marketing. (n.d.). 10 Website Key Performance Indicators (KPIs) to T
 
 Vaičiūnaitė, D. (2022, August 3). Top 10 Website KPIs to Measure Your Client's Website Performance. Whatagraph. https://whatagraph.com/blog/articles/website-kpis [Accessed 16 August 2025] 
 
+https://formspree.io/ [Accessed 18 November 2025]
+
+"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.481833731457!2d25.55989974686161!3d-33.98015552940523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e7ad1f24c7bbeb3%3A0x8181962be6afd474!2sWalmer%20Park%20Shopping%20Centre!5e0!3m2!1sen!2sza!4v1762254633171!5m2!1sen!2sza" 
+[Accessed 17 November 2025]
+
+
+
 Screenshots: 
 
 Google Chrome:
