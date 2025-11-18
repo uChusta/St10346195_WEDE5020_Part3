@@ -1,6 +1,4 @@
 # robots.txt for CloudTech website
-# Allow all crawlers by default, but block common private/system paths.
-# Update this file if you want to restrict or permit specific pages.
 
 User-agent: *
 # Disallow any admin or private directories (update if these don't exist)
@@ -16,5 +14,5 @@ Disallow: /node_modules/
 # Allow everything else
 Allow: /
 
-# Sitemap points to the repository GitHub Pages sitemap (update if hosted elsewhere)
+# Sitemap points to the repository GitHub Pages sitemap
 Sitemap: https://uChusta.github.io/St10346195_WEDE5020_Part3/sitemap.xml

@@ -175,7 +175,7 @@ function validateRepairForm() {
     var email = document.getElementById("email").value.trim();
     var phone = document.getElementById("phone").value.trim();
     var service = document.getElementById("service").value;
-    var details = document.getElementById("details").value.trim();
+    var message = document.getElementById("message").value.trim();
 
     // Check required fields
     if (name === "") {
@@ -210,17 +210,147 @@ function validateRepairForm() {
 }
 
 // Attach form submit handlers to process forms via JavaScript (prevent default submission)
+// Initialize form handlers and email sending helpers
 (function initFormHandlers() {
+    // Configuration: choose provider and fill credentials/endpoint if using a third-party service.
+    // Options for provider:'formspree'
+    var emailConfig = {
+        provider: 'formspree', // change to 'emailjs' or 'formspree' when configured
+        emailjs: {
+            userID: 'YOUR_EMAILJS_USER_ID', // e.g. user_xxx
+            serviceID: 'YOUR_SERVICE_ID',   // e.g. service_xxx
+            templateID: 'YOUR_TEMPLATE_ID'  // e.g. template_xxx
+        },
+        formspreeContactEndpoint: 'https://formspree.io/f/xyzozade', // replace with your contact form Formspree endpoint
+        formspreeRepairEndpoint: 'https://formspree.io/f/mrbjbvwy' // repair form endpoint
+    };
+
+    function showFormMessage(form, message, isError) {
+        if (!form) return;
+        var existing = form.querySelector('.form-message');
+        if (!existing) {
+            existing = document.createElement('div');
+            existing.className = 'form-message';
+            existing.style.marginTop = '8px';
+            existing.style.fontWeight = '600';
+            form.appendChild(existing);
+        }
+        existing.textContent = message;
+        existing.style.color = isError ? '#ff5555' : '#1E90FF';
+    }
+
+    // Separate email sending functions for contact form
+    function sendContactEmail(data, provider) {
+        var name = data.get('name1') || '';
+        var surname = data.get('surname1') || '';
+        var email = data.get('email1') || '';
+        var phone = data.get('phone1') || '';
+        var subject = data.get('subject1') || 'Contact form submission';
+        var message = data.get('details1') || '';
+
+        if (provider === 'emailjs') {
+            return sendViaEmailJS(emailConfig.emailjs, { name: name, surname: surname, email: email, phone: phone, subject: subject, message: message });
+        }
+        if (provider === 'formspree') {
+            return sendViaFormspree(emailConfig.formspreeContactEndpoint, data);
+        }
+        // Fallback: mailto
+        var body = 'Name: ' + name + '\nSurname: ' + surname + '\nPhone: ' + phone + '\n\n' + message;
+        sendViaMailto(subject, body, '');
+        return Promise.resolve(); // mailto doesn't return a promise, but we can resolve immediately
+    }
+
+    // Separate email sending functions for repair form
+    function sendRepairEmail(data, provider) {
+        var name = data.get('name') || '';
+        var email = data.get('email') || '';
+        var phone = data.get('phone') || '';
+        var service = data.get('service') || '';
+        var details = data.get('message') || '';
+
+        if (provider === 'emailjs') {
+            return sendViaEmailJS(emailConfig.emailjs, { name: name, email: email, phone: phone, service: service, details: details });
+        }
+        if (provider === 'formspree') {
+            return sendViaFormspree(emailConfig.formspreeRepairEndpoint, data);
+        }
+        // Fallback: mailto
+        var subject = 'Repair request: ' + service;
+        var body = 'Name: ' + name + '\nPhone: ' + phone + '\n\n' + details;
+        sendViaMailto(subject, body, '');
+        return Promise.resolve();
+    }
+
+    function sendViaMailto(subject, body, to) {
+        to = to || 'support@cloudtech.local'; // fallback email
+        var mailtoLink = 'mailto:' + encodeURIComponent(to) + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        // Create a temporary link and click it to open mail client
+        var link = document.createElement('a');
+        link.href = mailtoLink;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function sendViaFormspree(endpoint, formData) {
+        return fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: formData
+        }).then(function(resp){
+            if (!resp.ok) throw new Error('Network response was not ok');
+            return resp.json().catch(function(){ return {}; });
+        });
+    }
+
+    function loadEmailJSSDK() {
+        return new Promise(function(resolve, reject){
+            if (window.emailjs) return resolve(window.emailjs);
+            var s = document.createElement('script');
+            s.src = 'https://cdn.emailjs.com/sdk/2.3.2/email.min.js';
+            s.onload = function(){
+                if (window.emailjs) return resolve(window.emailjs);
+                reject(new Error('EmailJS SDK failed to load'));
+            };
+            s.onerror = reject;
+            document.head.appendChild(s);
+        });
+    }
+
+    function sendViaEmailJS(cfg, templateParams) {
+        return loadEmailJSSDK().then(function(emailjs){
+            if (!emailjs.initCalled) {
+                try { emailjs.init(cfg.userID); } catch (e) { /* ignore */ }
+                emailjs.initCalled = true;
+            }
+            return emailjs.send(cfg.serviceID, cfg.templateID, templateParams);
+        });
+    }
+
     function setupContact() {
         var form = document.getElementById('contactForm');
         if (!form) return;
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            if (validateContactForm()) {
-                // Simulate successful send: show message and reset
-                alert('Thank you! Your message has been received. We will contact you shortly.');
+            if (!validateContactForm()) return;
+            var submitBtn = form.querySelector('input[type=submit]');
+            if (submitBtn) submitBtn.disabled = true;
+
+            var data = new FormData(form);
+            var name = data.get('name1') || '';
+            var surname = data.get('surname1') || '';
+            var email = data.get('email1') || '';
+            var phone = data.get('phone1') || '';
+            var subject = data.get('subject1') || 'Contact form submission';
+            var message = data.get('details1') || '';
+
+            sendContactEmail(data, emailConfig.provider).then(function(){
+                showFormMessage(form, 'Thank you — your message was sent.', false);
                 form.reset();
-            }
+            }).catch(function(err){
+                showFormMessage(form, 'Sending failed — please try again or contact us directly.', true);
+                console.error(err);
+            }).finally(function(){ if (submitBtn) submitBtn.disabled = false; });
         });
     }
 
@@ -229,10 +359,24 @@ function validateRepairForm() {
         if (!form) return;
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            if (validateRepairForm()) {
-                alert('Repair request received. We will contact you at the email provided.');
+            if (!validateRepairForm()) return;
+            var submitBtn = form.querySelector('input[type=submit]');
+            if (submitBtn) submitBtn.disabled = true;
+
+            var data = new FormData(form);
+            var name = data.get('name') || '';
+            var email = data.get('email') || '';
+            var phone = data.get('phone') || '';
+            var service = data.get('service') || '';
+            var message = data.get('message') || '';
+
+            sendRepairEmail(data, emailConfig.provider).then(function(){
+                showFormMessage(form, 'Repair request sent — we will contact you shortly.', false);
                 form.reset();
-            }
+            }).catch(function(err){
+                showFormMessage(form, 'Sending failed — please try again.', true);
+                console.error(err);
+            }).finally(function(){ if (submitBtn) submitBtn.disabled = false; });
         });
     }
 

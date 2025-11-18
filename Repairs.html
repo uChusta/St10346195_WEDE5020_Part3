@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <!--SEO tag-->
+    <title>CloudTech Inc. - Repairs</title>
+    <!-- Meta Description:-->
+        <meta name="description" content="Need computer repair services? Contact CloudTech Inc. 
+        for expert assistance with hardware repairs, software troubleshooting, virus removal, 
+        and more. Fill out our repair request form today.">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/Style.css">
@@ -46,19 +53,25 @@
             You can reach us via phone, email, or by visiting our store. We're here to help!</p>
             <br>
 
+        <!-- Repair form section -->
         <div class="form" id="repairForm">
 
          <!-- Add explicit id so JS can attach a submit handler; remove inline onclick from the submit button below -->
-         <form id="repairFormForm" action="/action_page.php" name="RepairForm" method="post">
+         <!-- Repair request form for collecting customer details and service needs -->
+         <form id="repairFormForm" action="https://formspree.io/f/mrbjbvwy" name="RepairForm" method="post" enctype="multipart/form-data">
+            <!-- Name input field (required) -->
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required><br><br>
-            
+
+            <!-- Email input field (required) -->
             <label for="email">Email:</label><br>
-            <input type="text" id="email" name="email" required><br><br>
-            
+            <input type="email" id="email" name="email" required><br><br>
+
+            <!-- Phone number input field (optional) -->
             <label for="phone">Phone Number:</label><br>
             <input type="tel" id="phone" name="phone"><br><br>
-            
+
+            <!-- Service selection dropdown (required) -->
             <label for="service">Service Required:</label><br>
             <select id="service" name="service" required>
                 <option value="">--Please choose an option--</option>
@@ -71,17 +84,19 @@
                 <option value="other">Other</option>
             </select><br><br>
 
+            <!-- Image upload field (optional) -->
             <label for="myimage">Upload Image (if applicable):</label><br>
             <input type="file" id="myimage" name="myimage" accept="image/*"><br><br>
-            
-            <label for="details">Additional Details:</label><br>
-            <textarea id="details" name="details" rows="4" cols="50"></textarea><br>
-           
+
+            <!-- Additional details textarea (optional) -->
+            <label for="message">Additional Details:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+
                 <input type="submit" value="Submit">
                 <input type="reset" value="Reset">
                 <br>
                 <br>
-        </form> 
+        </form>
         </div>
 
 

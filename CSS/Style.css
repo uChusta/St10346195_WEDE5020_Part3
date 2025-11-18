@@ -126,7 +126,7 @@ p {
 }
 
 /*-------styling for all forms-------*/
-input[type=text], select, textarea, input[type=tel] {
+input[type=text], input[type=email], select, textarea, input[type=tel] { /* Includes email input for consistent styling with other form fields */
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
