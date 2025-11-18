@@ -2,7 +2,7 @@ PART 2- READ ME
 
 Overview:
 
-This project builds upon the HTML and CSS code from ST1034619_WEDE5020_Part3 and provides Javascript interactivity along with overall improvements to the website. Using CSS I was able to add a plethora of functionalities and and inpmroments thhat make the website more responsive and interactive with the user.  
+This project builds upon the HTML and CSS code from ST1034619_WEDE5020_Part3 and provides Javascript interactivity along with overall improvements to the website. Using CSS I was able to add a plethora of functionalities and improvements that make the website more responsive and interactive with the user. I also added SEO functionality and Email functionality to the website.
 
 References:
 

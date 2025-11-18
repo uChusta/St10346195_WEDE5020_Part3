@@ -58,6 +58,7 @@ Files updated:
 - `CSS/Style.css` — products grid rules, sidebar toggle + collapsible styles, responsive media queries, comments
 - `Products.html` — wrapped product cards in `.products-grid`, added `id="top"`, added sidebar toggle and `id="sidebarMenu"`, added "Back to Top" link, and inline comments
 
+
 17 Nov 2025:
 
 - Updated site background and hero behavior:
@@ -110,13 +111,14 @@ Additional 18 Nov 2025 updates:
 	- "Accessibility: improve image alt text for products and about page" — updated alt attributes.
 	- "Changelog: document background and CSS cleanup (17 Nov 2025); Add product filter and JS fix (18 Nov 2025)" — documented recent CSS and filter changes.
 	- "SEO: set sitemap and robots to GitHub Pages URL" — added/updated `sitemap.xml` and `robots.txt`.
-	- "Forms: fix markup and add JS submit handlers for contact and repair forms" — fixed form markup and added JS handlers.
+- "Forms: fix markup and add JS submit handlers for contact and repair forms" — fixed form markup and added JS handlers.
+- "SEO Improvements and Copyright Update" — updated copyright in About.html to "CloudTech Inc." for consistency and added SEO enhancements in CSS/Style.css.
 
 Files updated (summary):
 - `Products.html` — filter moved to sidebar; `data-category` attributes added; alt text updated for product images.
 - `JS/Script.js` — product filter, filter initializer, validation fixes, and form submit handlers.
-- `CSS/Style.css` — background-image, repeat, brightness filter, nav font-size, cleanup.
+- `CSS/Style.css` — background-image, repeat, brightness filter, nav font-size, cleanup; SEO improvements.
 - `Contact.html` — corrected email input, added form id, removed inline onclick.
 - `Repairs.html` — added form id, removed inline onclick.
-- `About.html` — updated image alt.
+- `About.html` — updated image alt; copyright updated to "CloudTech Inc.".
 - `robots.txt`, `sitemap.xml` — created and set to GitHub Pages URLs.

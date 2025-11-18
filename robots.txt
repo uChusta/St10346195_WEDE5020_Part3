@@ -1,10 +1,7 @@
 # robots.txt for CloudTech website
 
 User-agent: *
-# Disallow any admin or private directories (update if these don't exist)
-Disallow: /admin/
-Disallow: /private/
-Disallow: /node_modules/
+Allow: /
 
 # Static assets usually don't need to be crawled, but you can allow them if preferred
 # Disallow: /JS/
