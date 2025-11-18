@@ -12,7 +12,6 @@ body,html {
   padding: 20px;
   font: bold 14px/1.4 "Montserrat", sans-serif;
   background-image: url("../images/gaming1.png");
-  filter: brightness(50%);
   background-repeat: repeat;
   background-color: #000;
   color: #fff;
@@ -52,7 +51,7 @@ body,html {
   display: inline-block;
   padding: 15px 20px;
   position: relative;
-  font-size: 1.2em;
+  font-size: 1.7em;
 }
 
 /*-----Pseudoclass for navigation and footer---*/

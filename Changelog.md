@@ -60,3 +60,22 @@ Files updated:
 
 - Added comments describing all the edits in the three modified files (`Products.html`, `CSS/Style.css`, `JS/Script.js`). 
 
+18 Nov 2025:
+
+- Added a client-side product filter and moved the control into the sidebar:
+	- Moved the filter select into the sidebar menu (accessible label, inline styling for sidebar layout).
+	- Added `data-category` attributes to each product `.card` in `Products.html` so products can be matched by category.
+	- Implemented `filterProducts(category)` in `JS/Script.js` and a robust initializer that attaches to `#productFilter` whether the script runs before or after DOMContentLoaded.
+	- Fixed a bug where the filter code was accidentally nested inside the sidebar hash-handling block (it only ran when a hash existed); the filter code now runs reliably.
+
+Files updated:
+- `Products.html` — moved filter into sidebar and added `data-category` attributes to product cards.
+- `JS/Script.js` — added `filterProducts` and initialization logic; removed incorrectly nested filter code.
+
+How to test:
+- Open `Products.html` in a browser and use the "Filter" select in the sidebar to show only the selected category (All / Processors / Cases / Power Supplies).
+- If the sidebar is collapsed on smaller screens open the hamburger (☰) to access the filter.
+
+Notes:
+- The filter is client-side only and requires no server changes. If you'd like, I can add a text search, transitions for hiding/showing cards, or persist the selected filter in localStorage.
+

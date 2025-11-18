@@ -87,6 +87,37 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+// Product filtering: show/hide product cards based on selected category
+function filterProducts(category) {
+    var cards = document.querySelectorAll('.products-grid .card');
+    if (!cards) return;
+    cards.forEach(function(card) {
+        var cat = card.getAttribute('data-category') || '';
+        if (category === 'all' || category === '' || cat === category) {
+            card.style.display = '';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// Initialize the filter control whether the script runs before or after DOMContentLoaded
+(function initProductFilter() {
+    function setup() {
+        var filter = document.getElementById('productFilter');
+        if (!filter) return;
+        // initialize to show all (or current value)
+        filterProducts(filter.value || 'all');
+        filter.addEventListener('change', function(e) {
+            filterProducts(e.target.value);
+        });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setup);
+    } else {
+        setup();
+    }
+})();
 
 //contactform validation
 function validateContactForm() {
