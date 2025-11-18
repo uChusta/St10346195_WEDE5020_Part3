@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!--
+  sitemap.xml for CloudTech
+  Base URL set to the repository GitHub Pages URL. If you host elsewhere, update accordingly.
+  Example: https://uChusta.github.io/St10346195_WEDE5020_Part3/
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home / Index -->
+  <url>
+    <loc>https://uChusta.github.io/St10346195_WEDE5020_Part3/</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://uChusta.github.io/St10346195_WEDE5020_Part3/Index.html</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://uChusta.github.io/St10346195_WEDE5020_Part3/About.html</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://uChusta.github.io/St10346195_WEDE5020_Part3/Contact.html</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uChusta.github.io/St10346195_WEDE5020_Part3/Services.html</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uChusta.github.io/St10346195_WEDE5020_Part3/Products.html</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://uChusta.github.io/St10346195_WEDE5020_Part3/Repairs.html</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
