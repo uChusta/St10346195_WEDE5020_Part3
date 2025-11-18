@@ -58,8 +58,6 @@ Files updated:
 - `CSS/Style.css` — products grid rules, sidebar toggle + collapsible styles, responsive media queries, comments
 - `Products.html` — wrapped product cards in `.products-grid`, added `id="top"`, added sidebar toggle and `id="sidebarMenu"`, added "Back to Top" link, and inline comments
 
-- Added comments describing all the edits in the three modified files (`Products.html`, `CSS/Style.css`, `JS/Script.js`). 
- 
 17 Nov 2025:
 
 - Updated site background and hero behavior:
@@ -77,10 +75,6 @@ Files updated:
 Files updated:
 - `CSS/Style.css` — background image + repeat, brightness filter, nav font-size change, cleanup and formatting fixes.
 
-How to test:
-- Open any page (e.g. `Index.html` or `Products.html`) and confirm the background image tiles across the page and the nav items appear slightly larger.
-- Inspect `CSS/Style.css` to review the explicit `background-image`, `background-repeat`, and `background-color` fallback.
-
 18 Nov 2025:
 
 - Added a client-side product filter and moved the control into the sidebar:
@@ -97,6 +91,32 @@ How to test:
 - Open `Products.html` in a browser and use the "Filter" select in the sidebar to show only the selected category (All / Processors / Cases / Power Supplies).
 - If the sidebar is collapsed on smaller screens open the hamburger (☰) to access the filter.
 
-Notes:
-- The filter is client-side only and requires no server changes. If you'd like, I can add a text search, transitions for hiding/showing cards, or persist the selected filter in localStorage.
+Additional 18 Nov 2025 updates:
 
+- Accessibility and content improvements:
+	- Updated `alt` attributes for all product images in `Products.html` to descriptive, accessible phrases (e.g. `Intel Core i3 processor logo`, `Bitfenix Aegis Tower PC case - yellow`, etc.).
+	- Improved the About page image alt to `Assorted PC components and peripherals`.
+
+- Forms and JavaScript processing:
+	- Fixed malformed contact form markup in `Contact.html` (corrected `type="email"`, added `id="contactForm"`, removed duplicate `action` and inline `onclick`).
+	- Added an `id="repairFormForm"` to the repair form in `Repairs.html` and removed inline onclick handlers.
+	- Updated `JS/Script.js` to return boolean from validation functions and to attach submit handlers that prevent default submission, validate, show success messages, and reset forms. This makes client-side processing reliable and avoids accidental page reloads.
+
+- SEO and crawling files:
+	- Added `robots.txt` to the repository root and enabled a `Sitemap` entry pointing to the repository GitHub Pages sitemap.
+	- Created `sitemap.xml` in the repository root with all main pages listed and replaced placeholder `example.com` entries with the GitHub Pages URL `https://uChusta.github.io/St10346195_WEDE5020_Part3/`.
+
+- Commits made today:
+	- "Accessibility: improve image alt text for products and about page" — updated alt attributes.
+	- "Changelog: document background and CSS cleanup (17 Nov 2025); Add product filter and JS fix (18 Nov 2025)" — documented recent CSS and filter changes.
+	- "SEO: set sitemap and robots to GitHub Pages URL" — added/updated `sitemap.xml` and `robots.txt`.
+	- "Forms: fix markup and add JS submit handlers for contact and repair forms" — fixed form markup and added JS handlers.
+
+Files updated (summary):
+- `Products.html` — filter moved to sidebar; `data-category` attributes added; alt text updated for product images.
+- `JS/Script.js` — product filter, filter initializer, validation fixes, and form submit handlers.
+- `CSS/Style.css` — background-image, repeat, brightness filter, nav font-size, cleanup.
+- `Contact.html` — corrected email input, added form id, removed inline onclick.
+- `Repairs.html` — added form id, removed inline onclick.
+- `About.html` — updated image alt.
+- `robots.txt`, `sitemap.xml` — created and set to GitHub Pages URLs.
