@@ -59,6 +59,27 @@ Files updated:
 - `Products.html` — wrapped product cards in `.products-grid`, added `id="top"`, added sidebar toggle and `id="sidebarMenu"`, added "Back to Top" link, and inline comments
 
 - Added comments describing all the edits in the three modified files (`Products.html`, `CSS/Style.css`, `JS/Script.js`). 
+ 
+17 Nov 2025:
+
+- Updated site background and hero behavior:
+	- Set `body` background image to `../images/gaming1.png` and enabled `background-repeat: repeat` so the image tiles across the page.
+	- Replaced the previous `background: #000` shorthand with explicit `background-image` and `background-color: #000` fallback so the image displays correctly and the color remains a fallback.
+	- Added `filter: brightness(50%)` on the `body` in `CSS/Style.css` to subtly dim the background for better foreground readability.
+	- Left `.hero-image` as a dedicated hero area to preserve the large visual header (hero kept as separate styling).
+
+- CSS cleanup and misc fixes:
+	- Removed a stray character and fixed several typos (`v`, `psuedoclass`, `syling`) and simplified verbose properties (e.g. `background: none repeat ...` → `background: transparent`).
+	- Consolidated and removed duplicate rules and comments to improve maintainability.
+	- Increased top navigation font size by 20% (`.navLinks a { font-size: 1.2em; }`) to improve readability.
+	- Small responsive tweaks to navigation/footer and better consistency in spacing and indentation.
+
+Files updated:
+- `CSS/Style.css` — background image + repeat, brightness filter, nav font-size change, cleanup and formatting fixes.
+
+How to test:
+- Open any page (e.g. `Index.html` or `Products.html`) and confirm the background image tiles across the page and the nav items appear slightly larger.
+- Inspect `CSS/Style.css` to review the explicit `background-image`, `background-repeat`, and `background-color` fallback.
 
 18 Nov 2025:
 
