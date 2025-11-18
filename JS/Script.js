@@ -165,7 +165,8 @@ function validateContactForm() {
     }
 
     // If all validations pass
-    alert("Hello " + name + " " + surname + ",\n\nThank you for reaching out! We have received your message and will get back to you at " + email + " shortly.\n\nBest regards,\nThe Team");
+    // Return true so calling code can proceed (submit or simulated send)
+    return true;
 }
 
 function validateRepairForm() {
@@ -204,6 +205,44 @@ function validateRepairForm() {
     }
 
     // If all validations pass
-    alert("Hello " + name + ",\n\nThank you for submitting your repair request! We have received your details and will get back to you at " + email + " shortly.\n\nBest regards,\nThe Team");
+    // Return true so calling code can proceed
     return true;
 }
+
+// Attach form submit handlers to process forms via JavaScript (prevent default submission)
+(function initFormHandlers() {
+    function setupContact() {
+        var form = document.getElementById('contactForm');
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (validateContactForm()) {
+                // Simulate successful send: show message and reset
+                alert('Thank you! Your message has been received. We will contact you shortly.');
+                form.reset();
+            }
+        });
+    }
+
+    function setupRepair() {
+        var form = document.getElementById('repairFormForm');
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (validateRepairForm()) {
+                alert('Repair request received. We will contact you at the email provided.');
+                form.reset();
+            }
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+            setupContact();
+            setupRepair();
+        });
+    } else {
+        setupContact();
+        setupRepair();
+    }
+})();

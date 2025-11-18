@@ -44,7 +44,8 @@
         <!-- Contact form section - collects user information and message -->
         <div class="form" id="ContactForm">
             <!-- Form for contact inquiries with validation -->
-            <form action="Contact Us" method="post" name="ContactForm" action= "/action_page.php">
+            <!-- Give the form an id and a single action (if you use server-side handling). JS will intercept submission. -->
+            <form id="contactForm" method="post" name="ContactForm" action="/action_page.php">
                 <!-- Name input field (required) -->
                 <label for="name1">Name:</label><br>
                 <input type="text" id="name1" name="name1" placeholder="Your name" required ><br><br>
@@ -55,7 +56,7 @@
                 
                 <!-- Email input field (required) -->
                 <label for="email1">Email:</label><br>
-                <input type="text" id="email1" name="email1" placeholder="Your email" required<br><br>
+                <input type="email" id="email1" name="email1" placeholder="you@example.com" required><br><br>
                 
                 <!-- Phone number input field (optional) -->
                 <label for="phone1">Phone Number:</label><br>
@@ -69,8 +70,8 @@
                 <label for="details1">Message:</label><br>
                 <textarea id="details1" name="details1" placeholder="write something" rows="4" cols="50"></textarea><br><br>
                 
-                <!-- Submit button triggers form validation, Reset button clears form -->
-                <input type="submit" value="Submit" onclick="validateContactForm()">
+                <!-- Submit button triggers form validation via JS handler, Reset button clears form -->
+                <input type="submit" value="Submit">
                 <input type="reset" value="Reset">
             </form>
         </div>
